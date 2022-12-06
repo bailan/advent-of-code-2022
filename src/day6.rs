@@ -10,7 +10,7 @@ fn main() -> Result<()> {
     let part1 = datastream
         .windows(4)
         .enumerate()
-        .find(|(_, w)| w.iter().collect::<HashSet<&char>>().len() == 4)
+        .find(|(_, w)| w.iter().collect::<HashSet<&char>>().len() == w.len())
         .map(|(i, _)| i + 4)
         .expect("index");
     println!("{part1}");
@@ -18,7 +18,7 @@ fn main() -> Result<()> {
     let part2 = datastream
         .windows(14)
         .enumerate()
-        .find(|(_, w)| w.iter().collect::<HashSet<&char>>().len() == 14)
+        .find(|(_, w)| w.iter().collect::<HashSet<&char>>().len() == w.len())
         .map(|(i, _)| i + 14)
         .expect("index");
     println!("{part2}");
